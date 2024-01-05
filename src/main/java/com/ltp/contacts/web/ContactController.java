@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 
 import com.ltp.contacts.pojo.Contact;
 import com.ltp.contacts.service.ContactService;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -50,4 +52,9 @@ public class ContactController {
         return new ResponseEntity<Contact>(contactService.getContactById(id), HttpStatus.OK);
     }
     
+    @DeleteMapping("contact/{id}")
+    public ResponseEntity<HttpStatus> deleteContact(@PathVariable String id) {
+        
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
