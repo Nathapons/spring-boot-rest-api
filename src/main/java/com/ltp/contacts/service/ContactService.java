@@ -2,7 +2,7 @@ package com.ltp.contacts.service;
 
 import java.util.List;
 
-import com.ltp.contacts.model.Contact;
+import com.ltp.contacts.entity.Contact;
 
 public interface ContactService {
 

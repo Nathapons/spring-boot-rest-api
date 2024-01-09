@@ -5,9 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ltp.contacts.model.Course;
-import com.ltp.contacts.model.Grade;
-import com.ltp.contacts.model.Student;
+import com.ltp.contacts.entity.Grade;
+import com.ltp.contacts.entity.Student;
 import com.ltp.contacts.repository.GradeRepository;
 import com.ltp.contacts.repository.StudentRepository;
 

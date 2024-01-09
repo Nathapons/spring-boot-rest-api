@@ -6,8 +6,8 @@ import java.util.stream.IntStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ltp.contacts.entity.Contact;
 import com.ltp.contacts.exception.ContactNotFoundException;
-import com.ltp.contacts.model.Contact;
 import com.ltp.contacts.repository.ContactRepository;
 
 @Service

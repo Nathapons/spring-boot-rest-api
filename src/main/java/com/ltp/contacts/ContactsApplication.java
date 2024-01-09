@@ -7,7 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.ltp.contacts.model.Student;
+import com.ltp.contacts.entity.Student;
 import com.ltp.contacts.repository.StudentRepository;
 
 @SpringBootApplication

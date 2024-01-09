@@ -2,7 +2,7 @@ package com.ltp.contacts.service;
 
 import java.util.List;
 
-import com.ltp.contacts.model.Grade;
+import com.ltp.contacts.entity.Grade;
 
 public interface GradeService {
     Grade getGrade(Long studentId, Long courseId);

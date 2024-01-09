@@ -1,35 +1,32 @@
-package com.ltp.contacts.model;
-
-import java.time.LocalDate;
+package com.ltp.contacts.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name = "student")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Student {
-
+@Entity
+public class Grade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
-    @Column(name = "name", nullable = false)
-    private String name;
     
-    @Column(name = "birth_date", nullable = false)
-    private LocalDate birthDate;
+    @Column(name = "score", nullable = false)
+    private String score;    
 
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "student_id", referencedColumnName = "id")
+    private Student student;
 }
