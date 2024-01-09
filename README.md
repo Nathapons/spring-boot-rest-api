@@ -14,9 +14,10 @@ Check java version in sdkman for getting java<version>
   sdk list java
 ```
 
+Install java version
 ```bash
   sdk install java<version>
-  sdk use java <version>
+  sdk use java<version>
 ```
 
 ## Run Locally
