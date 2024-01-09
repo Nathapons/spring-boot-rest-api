@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ltp.contacts.pojo.Student;
 import com.ltp.contacts.exception.StudentNotFoundException;
+import com.ltp.contacts.model.Student;
 import com.ltp.contacts.repository.StudentRepository;
 
 import lombok.AllArgsConstructor;

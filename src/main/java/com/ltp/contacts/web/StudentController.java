@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ltp.contacts.pojo.Student;
+import com.ltp.contacts.model.Student;
 import com.ltp.contacts.service.StudentService;
 
 import lombok.AllArgsConstructor;

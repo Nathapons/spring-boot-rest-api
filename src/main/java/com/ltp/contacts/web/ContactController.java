@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.ltp.contacts.exception.ErrorResponse;
-import com.ltp.contacts.pojo.Contact;
+import com.ltp.contacts.model.Contact;
 import com.ltp.contacts.service.ContactService;
 
 import io.swagger.v3.oas.annotations.Operation;
