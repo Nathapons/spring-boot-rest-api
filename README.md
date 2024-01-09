@@ -4,6 +4,21 @@
 Purpose: Create REST APIs in JAVA programming language
 
 
+
+## Installation
+
+Install SDKMAN in [sdkman.io](https://sdkman.io/install)
+
+Check java version in sdkman for getting java<version>
+```bash
+  sdk list java
+```
+
+```bash
+  sdk install java<version>
+  sdk use java <version>
+```
+
 ## Run Locally
 
 Clone the project
