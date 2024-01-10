@@ -9,4 +9,5 @@ public interface GradeService {
     Grade saveGrade(Grade grade, Long studentId, Long courseId);
     Grade updateGrade(String score, Long studentId, Long courseId);
     List<Grade> getAllGrades();
+    List<Grade> getStudentGrades(Long studentId);
 }

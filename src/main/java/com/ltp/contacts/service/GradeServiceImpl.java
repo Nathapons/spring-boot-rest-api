@@ -29,7 +29,7 @@ public class GradeServiceImpl implements GradeService{
     
     @Override
     public Grade getGrade(Long studentId, Long courseId) {
-        return gradeRepository.findByStudentId(studentId);
+        return null;
     }
 
     @Override
@@ -44,5 +44,10 @@ public class GradeServiceImpl implements GradeService{
     @Override
     public Grade updateGrade(String score, Long studentId, Long courseId) {
         return null;
+    }
+
+    @Override
+    public List<Grade> getStudentGrades(Long studentId) {
+        return gradeRepository.findByStudentId(studentId);
     }
 }
