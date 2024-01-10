@@ -2,7 +2,6 @@ package com.ltp.contacts.web;
 
 import java.util.List;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +27,7 @@ public class GradeController {
     GradeService gradeService;
 
     @GetMapping("/student/{studentId}/course/{courseId}")
-    public ResponseEntity<Grade> getMethodName(@PathVariable Long studentId, @PathVariable Long courseId) {
+    public ResponseEntity<Grade> getGrade(@PathVariable Long studentId, @PathVariable Long courseId) {
         return new ResponseEntity<>(gradeService.getGrade(studentId, courseId), HttpStatus.OK);
     }
     
