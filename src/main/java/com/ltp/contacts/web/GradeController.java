@@ -26,10 +26,10 @@ public class GradeController {
     @Autowired
     GradeService gradeService;
 
-    @GetMapping("/student/{studentId}/course/{courseId}")
-    public ResponseEntity<Grade> getGrade(@PathVariable Long studentId, @PathVariable Long courseId) {
-        return new ResponseEntity<>(gradeService.getGrade(studentId, courseId), HttpStatus.OK);
-    }
+    // @GetMapping("/student/{studentId}/course/{courseId}")
+    // public ResponseEntity<Grade> getGrade(@PathVariable Long studentId, @PathVariable Long courseId) {
+    //     return new ResponseEntity<>(gradeService.getGrade(studentId, courseId), HttpStatus.OK);
+    // }
     
     @GetMapping("/student/{studentId}")
     public ResponseEntity<List<Grade>> getStudentGrades(@PathVariable Long studentId) {
