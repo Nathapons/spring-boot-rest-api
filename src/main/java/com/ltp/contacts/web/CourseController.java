@@ -3,6 +3,9 @@ package com.ltp.contacts.web;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ltp.contacts.entity.Course;
+import com.ltp.contacts.service.CourseService;
+
+import lombok.AllArgsConstructor;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,9 +21,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/course")
 public class CourseController {
+
+    CourseService courseService;
     
     @GetMapping("/{id}")
     public ResponseEntity<Course> getCourse(@PathVariable Long id) {
@@ -29,7 +35,7 @@ public class CourseController {
 
     @PostMapping
     public ResponseEntity<Course> createCourse(@RequestBody Course course) {
-        return new ResponseEntity<>(course, HttpStatus.CREATED);
+        return new ResponseEntity<>(courseService.saveCourse(course), HttpStatus.CREATED);
     }
     
     @DeleteMapping("/{id}")

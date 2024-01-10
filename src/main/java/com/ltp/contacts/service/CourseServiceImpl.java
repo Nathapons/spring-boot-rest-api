@@ -2,15 +2,18 @@ package com.ltp.contacts.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.ltp.contacts.entity.Course;
+import com.ltp.contacts.repository.CourseRepository;
 
 import lombok.AllArgsConstructor;
+
+import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class CourseServiceImpl implements CourseService {
+
+    CourseRepository courseRepository;
     
     @Override
     public List<Course> getCourse() {
@@ -19,7 +22,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Course saveCourse(Course course) {
-        return null;
+        return courseRepository.save(course);
     }
 
     @Override
