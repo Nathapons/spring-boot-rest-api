@@ -16,7 +16,6 @@ import lombok.AllArgsConstructor;
 @Service
 public class StudentServiceImpl implements StudentService {
 
-    @Autowired
     StudentRepository studentRepository;
 
     @Override

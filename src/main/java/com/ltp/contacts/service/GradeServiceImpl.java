@@ -3,9 +3,7 @@ package com.ltp.contacts.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.ltp.contacts.entity.Grade;
 import com.ltp.contacts.entity.Student;
 import com.ltp.contacts.exception.GradeNotFoundException;
@@ -18,10 +16,7 @@ import lombok.AllArgsConstructor;
 @Service
 public class GradeServiceImpl implements GradeService{
 
-    @Autowired
     GradeRepository gradeRepository;
-
-    @Autowired
     StudentRepository studentRepository;
 
     @Override
