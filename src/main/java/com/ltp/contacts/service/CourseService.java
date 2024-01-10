@@ -8,5 +8,5 @@ public interface CourseService {
     Course getCourse(Long id);
     Course saveCourse(Course course);
     void deleteCourse(Long id);
-    List<Course> getCourse();
+    List<Course> getCourses();
 }

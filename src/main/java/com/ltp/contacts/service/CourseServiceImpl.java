@@ -16,8 +16,8 @@ public class CourseServiceImpl implements CourseService {
     CourseRepository courseRepository;
     
     @Override
-    public List<Course> getCourse() {
-        return null;
+    public List<Course> getCourses() {
+        return (List<Course> )courseRepository.findAll();
     }
 
     @Override
@@ -27,13 +27,11 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public void deleteCourse(Long id) {
-        // TODO Auto-generated method stub
-        
+        courseRepository.deleteById(id);
     }
 
     @Override
     public Course getCourse(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+        return courseRepository.findById(id).get();
     }
 }

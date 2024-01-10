@@ -33,8 +33,9 @@ public class ContactsApplication implements CommandLineRunner{
             new Student("Neville Longbottom", LocalDate.parse(("1980-07-30"))) 
         };
 
-		for (int i = 0; i < students.length; i ++) {
-			studentRepository.save(students[i]);
+		for (Student student : students) {
+			
+			studentRepository.save(student);
 		}
 
 		Course[] courses = new Course[] {
