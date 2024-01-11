@@ -15,6 +15,7 @@ import com.ltp.contacts.service.GradeService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
@@ -47,5 +48,11 @@ public class GradeController {
     @PutMapping("/student/{studentId}/course/{courseId}")
     public ResponseEntity<Grade> updateGrade(@RequestBody Grade grade, @PathVariable Long studentId, @PathVariable Long courseId) {
         return new ResponseEntity<>(gradeService.updateGrade(grade.getScore(), studentId, courseId), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/student/{studentId}/course/{courseId}")
+    public ResponseEntity<HttpStatus> deleteGrade(@PathVariable Long studentId, @PathVariable Long courseId) {
+        gradeService.deleteGrade(studentId, courseId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

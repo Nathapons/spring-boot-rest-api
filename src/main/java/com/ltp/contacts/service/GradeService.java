@@ -10,4 +10,5 @@ public interface GradeService {
     Grade updateGrade(String score, Long studentId, Long courseId);
     List<Grade> getAllGrades();
     List<Grade> getStudentGrades(Long studentId);
+    void deleteGrade(Long studentId, Long courseId);
 }

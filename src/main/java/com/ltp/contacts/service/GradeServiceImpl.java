@@ -68,4 +68,9 @@ public class GradeServiceImpl implements GradeService{
         if (entity.isPresent()) return entity.get();
         else throw new GradeNotFoundException(studentId, courseId);
     }
+
+    @Override
+    public void deleteGrade(Long studentId, Long courseId) {
+        
+    }
 }
