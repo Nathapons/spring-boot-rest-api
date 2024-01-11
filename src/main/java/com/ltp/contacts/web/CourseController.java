@@ -48,4 +48,9 @@ public class CourseController {
         return new ResponseEntity<>(courseService.getCourses(), HttpStatus.OK);
     }
     
+    @PostMapping("{courseId}/student/{studentId}")
+    public ResponseEntity<Course> enrollStudentToCourse(@PathVariable Long courseId, @PathVariable Long studentId) {
+        return new ResponseEntity<>(courseService.addStudentToCourse(studentId, courseId), HttpStatus.CREATED);
+    }
+    
 }
