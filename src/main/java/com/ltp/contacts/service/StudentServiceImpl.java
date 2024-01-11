@@ -20,7 +20,11 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student getStudent(Long id) {
         Optional<Student> student = studentRepository.findById(id);
-        return unwrapStudent(student, id);
+        if (student.isPresent()) {
+            return student.get();
+        } else {
+            throw new StudentNotFoundException(id);
+        }
     }
 
     @Override

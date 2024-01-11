@@ -30,7 +30,12 @@ public class GradeServiceImpl implements GradeService{
     
     @Override
     public Grade getGrade(Long studentId, Long courseId) {
-        return gradeRepository.findByStudentIdAndCourseId(studentId, courseId);
+        Optional<Grade> grade = gradeRepository.findByStudentIdAndCourseId(studentId, courseId);
+        if (grade.isPresent()) {
+            return grade.get();
+        } else {
+            throw new GradeNotFoundException(studentId, courseId);
+        }
     }
 
     @Override
@@ -44,9 +49,14 @@ public class GradeServiceImpl implements GradeService{
 
     @Override
     public Grade updateGrade(String score, Long studentId, Long courseId) {
-        Grade grade = gradeRepository.findByStudentIdAndCourseId(studentId, courseId);
-        grade.setScore(score);
-        return gradeRepository.save(grade);
+        Optional<Grade> grade = gradeRepository.findByStudentIdAndCourseId(studentId, courseId);
+        if (grade.isPresent()) {
+            Grade unwrapGrade = grade.get();
+            unwrapGrade.setScore(score);
+            return gradeRepository.save(unwrapGrade);
+        } else {
+            throw new GradeNotFoundException(studentId, courseId);
+        }
     }
 
     @Override
