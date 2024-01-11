@@ -2,9 +2,11 @@ package com.ltp.contacts.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
+import com.ltp.contacts.entity.Course;
 import com.ltp.contacts.entity.Student;
 import com.ltp.contacts.exception.StudentNotFoundException;
 import com.ltp.contacts.repository.StudentRepository;
@@ -36,6 +38,12 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> getStudents() {
         return (List<Student>)studentRepository.findAll();
+    }
+
+    @Override
+    public Set<Course> getEnrolledCourses(Long id) {
+        Student student = getStudent(id);
+        return student.getCourses();
     }
     
     static Student unwrapStudent(Optional<Student> entity, Long id) {

@@ -1,7 +1,9 @@
 package com.ltp.contacts.service;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import com.ltp.contacts.entity.Course;
 import com.ltp.contacts.entity.Student;
@@ -48,6 +50,12 @@ public class CourseServiceImpl implements CourseService {
         Student unwrapStudent = StudentServiceImpl.unwrapStudent(student, studentId);
         course.getStudents().add(unwrapStudent);
         return courseRepository.save(course);
+    }
+
+    @Override
+    public Set<Student> getEnrollStudents(Long id) {
+        Course course = getCourse(id);
+        return new HashSet<>(course.getStudents());
     }
 
     static Course unwrapCourse(Optional<Course> entity, Long id) {

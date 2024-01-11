@@ -3,6 +3,7 @@ package com.ltp.contacts.web;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ltp.contacts.entity.Course;
+import com.ltp.contacts.entity.Student;
 import com.ltp.contacts.service.CourseService;
 
 import lombok.AllArgsConstructor;
@@ -10,6 +11,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @AllArgsConstructor
@@ -51,6 +54,12 @@ public class CourseController {
     @PostMapping("{courseId}/student/{studentId}")
     public ResponseEntity<Course> enrollStudentToCourse(@PathVariable Long courseId, @PathVariable Long studentId) {
         return new ResponseEntity<>(courseService.addStudentToCourse(studentId, courseId), HttpStatus.CREATED);
+    }
+    
+
+    @GetMapping("/{id}/students")
+    public ResponseEntity<Set<Student>> getEnrolledStudents(@PathVariable Long id) {
+        return new ResponseEntity<>(courseService.getEnrollStudents(id), HttpStatus.OK);
     }
     
 }
